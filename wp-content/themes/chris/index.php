@@ -12,45 +12,57 @@
  * @package chris
  */
 
-get_header(); ?>
+get_header();
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$images = get_field('imagens', 'option');
+?>
 
-		<?php
-		if ( have_posts() ) :
+<div id="primary" class="content-area" ng-app="app" ng-controller="HomeController as home">
+  <main id="main" class="site-main">
 
-			if ( is_home() && ! is_front_page() ) : ?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+    <section class="slider" ng-style="{height:home.height}">
+        <?php if ($images) : ?>
+      <ul class="bxslider">
+        <?php foreach ($images as $image) : ?>
+        
+        <li itemprop="image" itemscope itemtype="http://schema.org/ImageObject" ng-style="{height:home.height}">
+        
+          <meta itemprop="url" content="<?= $image['url']; ?>" />
+            <?php
+            $slide = wp_get_attachment_image_src( $image['id'], "full");
+            ?>
+          <meta itemprop="height" content="<?= $slide[2]; ?>" />
+          <meta itemprop="width" content="<?= $slide[1]; ?>" />
+     
+          <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" itemscope="image" >
+        </li>
+        <?php endforeach; ?>
+      </ul>
+        <?php endif; ?>
+    </section>
+    <!-- slider -->
+  </main><!-- #main -->
+</div><!-- #primary -->
 
-			<?php
-			endif;
+<script>
+  (function () {
+  'use strict';
 
-			/* Start the Loop */
-			while ( have_posts() ) : the_post();
+  angular.module('app', []); // Startup
 
-				/*
-				 * Include the Post-Format-specific template for the content.
-				 * If you want to override this in a child theme, then include a file
-				 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-				 */
-				get_template_part( 'template-parts/content', get_post_format() );
+    angular
+    .module('app')
+    .controller('HomeController', HomeController);
 
-			endwhile;
+  HomeController.$inject = ['$window'];
 
-			the_posts_navigation();
-
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
-		endif; ?>
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
+  function HomeController($window) {
+    var vm = this;
+    vm.height = $window.innerHeight - 227;
+    vm.height += 'px';
+  }
+})();
+</script>
 
 <?php
-get_sidebar();
 get_footer();

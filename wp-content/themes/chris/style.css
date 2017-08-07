@@ -34,14 +34,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Accessibility
 # Alignments
 # Clearings
-# Widgets
 # Content
 	## Posts and pages
 	## Comments
 # Infinite scroll
 # Media
 	## Captions
-	## Galleries
+  ## Galleries
+  ## Home Slider
 --------------------------------------------------------------*/
 
 
@@ -132,9 +132,9 @@ big {
 --------------------------------------------------------------*/
 
 html {
+  background: #f2f3e2;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  background: #f2f3e2;
   font-family: sans-serif;
   font-size: 16px;
 }
@@ -310,7 +310,6 @@ textarea {
 
 .site-header {
   min-height: 227px;
-  padding-bottom: 50px;
   padding-top: 58px;
 }
 
@@ -379,10 +378,10 @@ a:active {
   display: none;
   list-style: none;
   margin: 0;
+  margin-right: -20px;
+  margin-top: 40px;
   padding-left: 0;
   text-align: center;
-  margin-top: 40px;
-  margin-right: -20px;
 }
 
 .main-navigation li {
@@ -409,8 +408,8 @@ a:active {
 @media (min-width: 48.000em) {
   .main-navigation ul {
     float: right;
-    text-align: left;
     margin-top: 0;
+    text-align: left;
   }
   .main-navigation li {
     float: left;
@@ -629,22 +628,6 @@ a .main-navigation li:hover>a,
 
 
 /*--------------------------------------------------------------
-# Widgets
---------------------------------------------------------------*/
-
-.widget {
-  margin: 0 0 1.5em;
-}
-
-
-/* Make sure select elements fit in widgets. */
-
-.widget select {
-  max-width: 100%;
-}
-
-
-/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
@@ -817,4 +800,57 @@ object {
 
 .gallery-caption {
   display: block;
+}
+
+
+/*--------------------------------------------------------------
+## Home Slider
+--------------------------------------------------------------*/
+
+.slider {
+  overflow: hidden;
+}
+
+.slider img {
+  height: 100%;
+  max-width: inherit;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
+.bx-wrapper {
+  background: transparent;
+  border: none;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  margin: 0;
+}
+
+.bx-controls-direction {
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0.5s linear;
+  transition: visibility 0s, opacity 0.5s linear;
+  visibility: hidden;
+}
+
+.bx-wrapper:hover .bx-controls-direction {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  height: 95px;
+  width: 60px;
+}
+
+.bx-wrapper .bx-prev,
+.bx-wrapper .bx-prev:hover {
+  background: url('images/controll-left.png') center no-repeat;
+}
+
+.bx-wrapper .bx-next,
+.bx-wrapper .bx-next:hover {
+  background: url('images/controll-right.png') center no-repeat;
 }
