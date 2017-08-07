@@ -20,8 +20,8 @@ function chris_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'chris_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
-		'width'                  => 1000,
-		'height'                 => 250,
+		'width'                  => 443,
+		'height'                 => 39,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'chris_header_style',
 	) ) );
