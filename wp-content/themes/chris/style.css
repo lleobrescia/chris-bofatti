@@ -31,6 +31,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Navigation
 	## Links
   ## Menus
+# Footer
 # Home
 # Accessibility
 # Alignments
@@ -545,6 +546,74 @@ a .main-navigation li:hover>a,
   float: right;
   text-align: right;
   width: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+  background: url('images/footer_bg.png') center top no-repeat;
+  margin-top: 90px;
+  min-height: 592px;
+  padding-top: 281px;
+}
+
+.site-info {
+  background: black;
+  color: #f2f3e2;
+  min-height: 310px;
+  padding-top: 50px;
+}
+
+.footer__ass {
+  font-size: 0.750em;
+}
+
+.footer_social_holder {
+  margin-bottom: -5px;
+  margin-top: -34px;
+}
+
+.footer__social {
+  display: inline-block;
+  height: 34px;
+  width: 34px;
+}
+
+.footer_social-face {
+  background: url('images/chris-bofatti-facebook.png') center no-repeat;
+}
+
+.footer_social-face:hover,
+.footer_social-face:focus {
+  background: url('images/chris-bofatti-facebook_hover.png') center no-repeat;
+}
+
+.footer_social-insta {
+  background: url('images/chris-bofatti-instagram.png') center no-repeat;
+  margin-right: 16px;
+}
+
+.footer_social-insta:hover,
+.footer_social-insta:focus {
+  background: url('images/chris-bofatti-instagram_hover.png') center no-repeat;
+}
+
+.footer__tel {
+  background: transparent;
+  color: #f2f3e2;
+  display: block;
+  font-size: 1.125em;
+}
+
+.footer__email {
+  color: #f2f3e2;
+  display: block;
+  font-size: 1em;
+  margin-bottom: 12px;
+  margin-top: -8px;
 }
 
 

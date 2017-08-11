@@ -11,24 +11,30 @@
 
 ?>
 
-	</div><!-- #content -->
+  </div>
+  <!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'chris' ) ); ?>"><?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'chris' ), 'WordPress' );
-			?></a>
-			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'chris' ), 'chris', '<a href="https://automattic.com/">Chris Bonfatti</a>' );
-			?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
-</div><!-- #page -->
+  <footer id="colophon" class="site-footer text-center">
+    <div class="footer_social_holder">
+      <a class="footer__social footer_social-insta" href="<?php the_field('link_instagram', 'option'); ?>" title="Chris Bonfatti Photography Instagram"
+        target="_blank" rel="nofollow"></a>
+      <a class="footer__social footer_social-face" href="<?php the_field('link_facebook', 'option'); ?>" title="Chris Bonfatti Photography Facebook"
+        target="_blank" rel="nofollow"></a>
+    </div>
+    <!-- footer_social_holder -->
+    <div class="site-info text-center">
+      <mark class="footer__tel"><?php the_field('telefone_de_contato', 'option'); ?></mark>
+      <a class="footer__email" href="mailto:<?php the_field('e-mail_de_contato', 'option'); ?>" data-rel="external" rel="external" title="Chris Bonfatti Photography E-mail"><?php the_field('e-mail_de_contato', 'option'); ?></a>
+      <span class="footer__ass">Chris Bonfatti Photography <?= date("Y"); ?></span>
+    </div>
+    <!-- .site-info -->
+  </footer>
+  <!-- #colophon -->
+  </div>
+  <!-- #page -->
 
-<?php wp_footer(); ?>
+  <?php wp_footer(); ?>
 
-</body>
-</html>
+  </body>
+
+  </html>
