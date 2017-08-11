@@ -168,6 +168,6 @@ if (defined( 'JETPACK__VERSION' )) {
 }
 
 /**
- * Home slider
+ * Menus extras 
  */
-require get_template_directory() . '/inc/home-slider.php';
+require get_template_directory() . '/inc/options-page.php';
