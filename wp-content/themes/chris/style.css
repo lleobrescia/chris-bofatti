@@ -30,7 +30,8 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Header
 # Navigation
 	## Links
-	## Menus
+  ## Menus
+# Home
 # Accessibility
 # Alignments
 # Clearings
@@ -124,6 +125,28 @@ ins {
 
 big {
   font-size: 125%;
+}
+
+.title {
+  margin-bottom: 30px;
+  margin-top: 65px;
+  width: 282px;
+}
+
+.title h1 {
+  color: #86ad89;
+  display: inline-block;
+  font-size: 2.125em;
+  font-weight: 300;
+  margin: 0;
+  margin-right: 13px;
+}
+
+.title span {
+  color: black;
+  display: inline-block;
+  font-size: 0.875em;
+  line-height: 1.2;
 }
 
 
@@ -522,6 +545,85 @@ a .main-navigation li:hover>a,
   float: right;
   text-align: right;
   width: 50%;
+}
+
+
+/*--------------------------------------------------------------
+# Home
+--------------------------------------------------------------*/
+
+.image__wapper {
+  border: 10px solid white;
+  -webkit-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 240px;
+  margin: 10px auto;
+  max-width: 360px;
+  overflow: hidden;
+  position: relative;
+}
+
+.image__content {
+  background-color: white;
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  width: 100%;
+}
+
+.image__wapper:hover .image__content,
+.image__wapper:focus .image__content {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
+.image__content::before {
+  background-color: rgba(0, 0, 0, 0.75);
+  content: "";
+  display: none;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.image__content h2,
+.image__content a {
+  color: white;
+}
+
+.image__content h2 {
+  display: none;
+  font-size: 0.875em;
+  font-weight: 300;
+  left: 0;
+  margin: 0;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  top: 113px;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.image__wapper:hover .image__content:before,
+.image__wapper:focus .image__content:before,
+.image__wapper:hover .image__content h2,
+.image__wapper:focus .image__content h2 {
+  display: block;
+}
+
+.image__content span.sub__titulo {
+  display: block;
+  font-size: 14px;
+  margin-top: 1px;
+  text-transform: capitalize;
 }
 
 
