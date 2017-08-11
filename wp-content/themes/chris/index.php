@@ -52,9 +52,9 @@ $images = get_field('imagens', 'option');
       $query = new WP_Query( $args );
 
       if ( $query->have_posts() ):
-      ?>
+    ?>
 
-    <section class="container blog__home">
+    <div class="container blog__home">
       <div class="row">
         <div class="col-xs-12">
           <div class="title center-block">
@@ -66,7 +66,23 @@ $images = get_field('imagens', 'option');
 
         <?php while ( $query->have_posts() ): $query->the_post(); ?>
           
-        <article  class="col-sm-4" itemid="<?php the_ID(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype=" http://schema.org/BlogPosting">
+        <section  class="col-sm-4" itemid="<?php the_ID(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype=" http://schema.org/BlogPosting">
+          <div class="image__wapper">
+            <header class="image__content" style=" background-image: url('<?= $image[0]; ?>')">
+              <h2 class="entry-title" itemprop="name headline">
+                <a itemprop="url" href="<?= esc_url( get_permalink() ); ?>" rel="bookmark" title="<?= get_the_title(); ?>">
+                  <?php the_title(); ?>
+                  <?php $categories = get_the_category(); ?> <br>
+                  <span class="sub__titulo"> 
+                    <span itemprop="genre"><?= $categories[0]->cat_name; ?></span>
+                    <?php if(get_field('local')): ?>
+                      || <?= get_field('local'); ?>
+                    <?php endif; ?>
+                  </span>
+                </a>
+              </h2>
+            </header>
+          </div>
           <span itemprop="author " itemscope itemtype="http://schema.org/Person" style="display:none">
             <span itemprop="name">Chris Bonfatti</span>
           </span>
@@ -81,28 +97,11 @@ $images = get_field('imagens', 'option');
 						<meta itemprop="width" content="<?= $image[1]; ?>" />
 						<?php echo get_the_post_thumbnail( get_the_ID(), 'full', array( 'itemscope' => 'image' ) );  ?>
           </figure>
-
-          <div class="image__wapper">
-            <div class="image__content" style=" background-image: url('<?= $image[0]; ?>')">
-              <h2 class="entry-title" itemprop="name headline">
-                <a itemprop="url" href="<?= esc_url( get_permalink() ); ?>" rel="bookmark" title="<?= get_the_title(); ?>">
-                  <?php the_title(); ?>
-                  <?php $categories = get_the_category(); ?> <br>
-                  <span class="sub__titulo"> 
-                    <span itemprop="genre"><?= $categories[0]->cat_name; ?></span>
-                    <?php if(get_field('local')): ?>
-                      || <?= get_field('local'); ?>
-                    <?php endif; ?>
-                  </span>
-                </a>
-              </h2>
-            </div>
-          </div>
-        </article >
+        </section>
         <?php endwhile; ?>
       </div>
       <!-- row -->
-    </section>
+    </div>
     <!-- blog__home -->
     <?php
     endif;
@@ -125,8 +124,8 @@ $images = get_field('imagens', 'option');
   HomeController.$inject = ['$window'];
 
   function HomeController($window) {
-    var vm = this;
-    vm.height = $window.innerHeight - 227;
+    var vm     = this;
+    vm.height  = $window.innerHeight - 227;
     vm.height += 'px';
   }
 })();
