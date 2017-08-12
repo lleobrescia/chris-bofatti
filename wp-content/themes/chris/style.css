@@ -579,6 +579,8 @@ a .main-navigation li:hover>a,
 .footer__social {
   display: inline-block;
   height: 34px;
+  -webkit-transition: all .2s;
+  transition: all .2s;
   width: 34px;
 }
 
@@ -609,7 +611,7 @@ a .main-navigation li:hover>a,
 }
 
 .footer__email {
-  color: #f2f3e2;
+  color: #f2f3e2 !important;
   display: block;
   font-size: 1em;
   margin-bottom: 12px;
@@ -693,6 +695,32 @@ a .main-navigation li:hover>a,
   font-size: 14px;
   margin-top: 1px;
   text-transform: capitalize;
+}
+
+.more {
+  color: #86ad89 !important;
+  font-size: 0.875em;
+  text-decoration: none !important;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.more i {
+  border: solid thin;
+  border-radius: 90px;
+  display: inline-block;
+  height: 20px;
+  line-height: 15px;
+  margin-left: 8px;
+  padding: 2px;
+  text-align: center;
+  width: 20px;
+}
+
+.more:hover i,
+.more:focus i {
+  background: #86ad89;
+  color: #f2f3e2;
 }
 
 

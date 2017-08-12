@@ -20,7 +20,7 @@ $images = get_field('imagens', 'option');
 <div id="primary" class="content-area" ng-app="app" ng-controller="HomeController as home">
   <main id="main" class="site-main">
 
-    <section class="slider" ng-style="{height:home.height}" itemprop="mainEntityOfPage">
+    <section class="slider" ng-style="{height:home.height}" itemprop="mainEntityOfPage" style="opacity: 0;">
         <?php if ($images) : ?>
       <ul class="bxslider">
         <?php foreach ($images as $image) : ?>
@@ -99,6 +99,11 @@ $images = get_field('imagens', 'option');
           </figure>
         </section>
         <?php endwhile; ?>
+
+        <div class="col-xs-12">
+          <a class="more pull-right" title="Veja mais" href="<?=  esc_url( home_url( '/blog' ) ); ?>">veja <i class="fa fa-plus" aria-hidden="true"></i></a>
+        </div>
+        <!-- col-xs-12 -->
       </div>
       <!-- row -->
     </div>

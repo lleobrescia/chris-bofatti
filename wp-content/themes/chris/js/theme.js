@@ -13,6 +13,8 @@
       $('.bxslider').bxSlider({
         auto: true
       });
+
+      $('.slider').css('opacity', '1.0');
     }
 
   });
