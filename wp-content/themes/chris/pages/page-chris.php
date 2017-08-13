@@ -86,7 +86,7 @@ get_header(); ?>
             <!-- row -->
 
             <div class="row">
-              <div class="col-xs-12">
+              <div class="col-sm-9 col-sm-offset-1">
                 <figure class="text-center" itemprop="image" itemscope itemtype="http://schema.org/ImageObject" style="margin:67px 0;">
                     <?php
                       $imagem = get_field('imagem');
