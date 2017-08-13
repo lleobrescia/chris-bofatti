@@ -33,6 +33,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
   ## Menus
 # Footer
 # Home
+# Sobre
 # Accessibility
 # Alignments
 # Clearings
@@ -721,6 +722,115 @@ a .main-navigation li:hover>a,
 .more:focus i {
   background: #86ad89;
   color: #f2f3e2;
+}
+
+
+/*--------------------------------------------------------------
+# Sobre
+--------------------------------------------------------------*/
+
+.sobre .page__banner {
+  background: #060c0e;
+  color: white;
+}
+
+.sobre .page__banner figure {
+  margin: 0;
+  opacity: 0.9;
+}
+
+@media(min-width:48.000em) {
+  .sobre .page_banner_text {
+    padding-top: 139px;
+  }
+}
+
+@media (max-width: 48.000em) {
+  .sobre .page__banner .col-xs-7 {
+    float: none;
+    margin: 30px auto;
+  }
+}
+
+.sobre .page_banner_text blockquote {
+  border: none;
+  display: inline-block;
+  font-size: 1.875em;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0 0 22px 0;
+  padding: 0;
+  position: relative;
+}
+
+.sobre .page_banner_text blockquote span {
+  font-size: 24px;
+}
+
+.sobre .page_banner_text blockquote mark {
+  background: transparent;
+  color: white;
+  font-weight: 400;
+}
+
+.sobre .page_banner_text blockquote strong {
+  font-size: 60px;
+}
+
+.sobre .page_banner_text blockquote:before {
+  background: url('images/aspas_top.png') center no-repeat;
+  height: 16px;
+  left: -29px;
+  position: absolute;
+  top: -5px;
+  width: 16px;
+}
+
+.sobre .page_banner_text blockquote:after {
+  background: url('images/aspas_bot.png') center no-repeat;
+  bottom: -1px;
+  height: 23px;
+  left: 164px;
+  position: absolute;
+  width: 23px;
+}
+
+.minha__historia,
+.meu__objetivo {
+  font-size: 0.875em;
+}
+
+@media(min-width:48.000em) {
+  .minha__historia:before {
+    background: url('images/minha_historia.png') no-repeat left center;
+    background-size: contain;
+    content: "";
+    height: 100%;
+    left: -100px;
+    position: absolute;
+    width: 100%;
+  }
+  .meu__objetivo:before {
+    background: url('images/meu_objetivo.png') no-repeat left center;
+    background-size: contain;
+    content: "";
+    height: 100%;
+    left: -100px;
+    position: absolute;
+    width: 100%;
+  }
+  .minha__historia h2,
+  .meu__objetivo h2 {
+    display: none;
+  }
+}
+
+.meu__objetivo {
+  margin-top: 15px;
+}
+
+.meu__objetivo p:first-child {
+  margin-top: 15px;
 }
 
 
