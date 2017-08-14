@@ -12,7 +12,7 @@ while (have_posts()) :
     the_post();
 ?>
 
-  <div id="primary" class="content-area contato ">
+  <div id="primary" class="content-area contato " itemscope itemtype="http://schema.org/ContactPage">
     <div class="container">
       <main id="main" class="site-main row">
         <header class="row">
