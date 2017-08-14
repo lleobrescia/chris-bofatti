@@ -34,6 +34,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Footer
 # Home
 # Sobre
+# Contato
 # Accessibility
 # Alignments
 # Clearings
@@ -831,6 +832,76 @@ a .main-navigation li:hover>a,
 
 .meu__objetivo p:first-child {
   margin-top: 15px;
+}
+
+
+/*--------------------------------------------------------------
+# Contato
+--------------------------------------------------------------*/
+
+.contato {
+  padding-bottom: 284px;
+  padding-top: 170px;
+}
+
+.page-template-page-contato .site-footer {
+  margin-top: -284px;
+}
+
+.contato h1 {
+  color: black;
+  font-size: 1.500em;
+  font-weight: 300;
+  line-height: 1;
+  margin: 0;
+}
+
+.contato h1 span {
+  font-size: 18px;
+}
+
+.contato h1 strong {
+  font-size: 60px;
+}
+
+@media(min-width:48.0em) {
+  .contato h1 strong {
+    left: -31px;
+    position: relative;
+    top: -12px;
+  }
+}
+
+.contato__dados span {
+  color: black;
+  font-size: 1.125em;
+}
+
+.contato__dados a {
+  color: black !important;
+  display: block;
+  font-size: 0.875em;
+}
+
+.contato__form {
+  margin-bottom: 94px;
+}
+
+.contato__form .form-control {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 0;
+  color: black;
+  font-size: 1.125em;
+}
+
+.contato__form .btn {
+  background: #b5dbac;
+  font-size: 1.500em;
+  color: black;
+  font-weight: 700;
+  border: none;
+  text-transform: uppercase;
 }
 
 
