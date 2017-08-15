@@ -897,11 +897,89 @@ a .main-navigation li:hover>a,
 
 .contato__form .btn {
   background: #b5dbac;
-  font-size: 1.500em;
-  color: black;
-  font-weight: 700;
   border: none;
+  color: black;
+  font-size: 1.500em;
+  font-weight: 700;
   text-transform: uppercase;
+}
+
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+
+.portfolio__list {}
+
+.portfolio__single figure {
+  position: relative;
+}
+
+.portfolio__single figure a:before {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+}
+
+.portfolio__single figure:hover a:before {
+  background: url('images/lupa.png') no-repeat center rgba(0, 0, 0, 0.20);
+  content: "";
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  width: 100%;
+}
+
+.portfolio__single.zoomOut:not(.zoomOut-add) {
+  display: none;
+}
+
+.filter__single {
+  background: none;
+  border: none;
+  font-size: 1em;
+  font-weight: 700;
+  outline: none;
+}
+
+.filter__single:hover,
+.filter__single:focus,
+.filter__single.active {
+  border: none;
+  color: #89c1dd;
+}
+
+.filter__title {
+  font-size: 1.125em;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.filter__assunto {
+  margin-bottom: -16px;
+  padding-bottom: 27px;
+  padding-top: 27px;
+}
+
+.banner h1 {
+  color: black;
+  font-size: 1.500em;
+  font-weight: 300;
+  margin: 0;
+  position: relative;
+  top: 220px;
+}
+
+.banner h1 span {
+  font-size: 18px;
+  position: relative;
+  top: -28px;
+}
+
+.banner h1 strong {
+  font-size: 60px;
+  position: relative;
+  top: -28px;
 }
 
 
