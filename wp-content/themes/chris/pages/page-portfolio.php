@@ -80,7 +80,7 @@ get_header(); ?>
               $image = get_field('imagem');
               $assunto = get_the_terms( get_the_ID(), 'assunto' );
         ?>
-          <div class="col-sm-4 portfolio__single fadeInDown animated <?= $assunto[0]->slug ?>" itemscope itemtype="http://schema.org/Photograph" ng-class="port.assunto == '<?= $assunto[0]->slug ?>' || port.assunto == 'todos' ? 'zoomIn' : 'zoomOut'">
+          <div class="col-sm-4 portfolio__single fadeInDown animated <?= $assunto[0]->slug ?>" itemscope itemtype="http://schema.org/Photograph" ng-class="port.assunto == '<?= $assunto[0]->slug ?>' || port.assunto == 'todos' ? 'zoomIn' : 'zoomOut'"  itemid="<?php the_ID(); ?>" id="portfolio-<?php the_ID(); ?>" <?php post_class(); ?>>
             <time datetime="<?= get_the_date('c'); ?>" itemprop="datePublished" style="display:none"></time>
             <time datetime="<?php the_modified_date('c'); ?>" itemprop="dateModified"  style="display:none"></time>
             <meta itemprop="name" content="<?php the_title(); ?>" />

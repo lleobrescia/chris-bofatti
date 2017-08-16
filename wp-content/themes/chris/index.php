@@ -66,7 +66,7 @@ $images = get_field('imagens', 'option');
 
         <?php while ( $query->have_posts() ): $query->the_post(); ?>
           
-        <section  class="col-sm-4" itemid="<?php the_ID(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype=" http://schema.org/BlogPosting">
+        <section  class="col-sm-4 animated fadeInDown" itemid="<?php the_ID(); ?>" id="post-<?php the_ID(); ?>" <?php post_class(); ?>  itemscope itemtype=" http://schema.org/BlogPosting">
           <div class="image__wapper">
             <header class="image__content" style=" background-image: url('<?= $image[0]; ?>')">
               <h2 class="entry-title" itemprop="name headline">
